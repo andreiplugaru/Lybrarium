@@ -1,24 +1,41 @@
 package com.fiipradctic.Lybrarium.controllers;
 
+import com.fiipradctic.Lybrarium.Exceptions.ApiRequestException;
 import com.fiipradctic.Lybrarium.Models.Book;
 import com.fiipradctic.Lybrarium.repositories.BookRepository;
 import com.fiipradctic.Lybrarium.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class BookController {
-BookRepository t;
+    BookRepository t;
     @Autowired
     private BookService bookService;
-
-    @GetMapping("/getBook/{id}")
-    public String getName(@PathVariable Integer id){
-
-        return bookService.getName(id);
+    @GetMapping("/getAllBooks")
+    public List<Book> getBooks(){
+       return bookService.getAllBooks();
+    }
+    @DeleteMapping("/removeBook/{id}")
+    public ResponseEntity removeBook(@PathVariable Long id){
+        bookService.removeBook(id);
+        ResponseEntity r = ResponseEntity.ok().body("Book id: " + id + " was removed successsfuly!");
+        return r;
     }
     @PostMapping("/addBook")
-    public void addBook(@RequestBody Book book){
-         bookService.addBook(book);
+    public ResponseEntity addBook(@RequestBody Book book){
+        Long newId =  bookService.addBook(book);
+        ResponseEntity r = ResponseEntity.ok().body("Book id: " + newId + " created successsfuly!");
+        return r;
     }
+    @PutMapping ("/updateBook")
+    public ResponseEntity updateBook(@RequestBody Book book){
+        bookService.updateBook(book);
+        ResponseEntity r = ResponseEntity.ok().body("Book id: " + book.getId() + " updated successsfuly!");
+        return r;
+    }
+
 }

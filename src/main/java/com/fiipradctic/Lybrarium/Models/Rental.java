@@ -4,21 +4,22 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="Book")
-public class Book{
+@Table(name="Rental", schema = "Rental")
+public class Rental {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
-    private String Name;
-    private String Author;
-
+    private Long itemId;
+    private Long clientId;
+    private Date rentedDate;
+    private Date returnedDate;
 }

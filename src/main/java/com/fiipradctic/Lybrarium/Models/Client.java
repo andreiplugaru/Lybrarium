@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 
@@ -13,12 +12,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="Book")
-public class Book{
+@Table(name="Client", schema = "Client")
+public class Client{
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
-    private String Name;
-    private String Author;
+    private String name;
 
 }
