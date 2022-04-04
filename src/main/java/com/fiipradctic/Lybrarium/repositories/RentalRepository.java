@@ -11,4 +11,5 @@ import java.util.List;
 public interface RentalRepository extends JpaRepository<Rental, Long> {
     List<Rental> findByItemId(Long itemId);
     boolean existsByItemId(Long itemId);
+    Rental findByClientIdAndItemId(Long clientId, Long itemId);
 }

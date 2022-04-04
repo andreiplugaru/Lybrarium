@@ -8,16 +8,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 public class BookController {
     BookRepository t;
     @Autowired
     private BookService bookService;
-    @GetMapping("/getAllBooks")
-    public List<Book> getBooks(){
-       return bookService.getAllBooks();
+
+    @GetMapping("/getBooks")
+    public List<Book> getBooks(@RequestParam("id") Optional<Long> id,
+                               @RequestParam("name") Optional<String> name,
+                               @RequestParam("author") Optional<String> author,
+                               @RequestParam("sort") Optional<String> sort){
+
+        return bookService.getBooks(id,name,author,sort);
     }
     @DeleteMapping("/removeBook/{id}")
     public ResponseEntity removeBook(@PathVariable Long id){
