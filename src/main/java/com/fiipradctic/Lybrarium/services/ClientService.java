@@ -22,6 +22,8 @@ public class ClientService {
     @Autowired
     RentalRepository rentalRepository;
     public Long addClient(Client client){
+        if(client.getName() == null)
+            throw new ApiRequestException("Name is null!");
         try {
             Client newClient = clientRepository.save(client);
             return newClient.getId();
