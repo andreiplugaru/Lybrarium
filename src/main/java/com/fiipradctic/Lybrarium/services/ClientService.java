@@ -1,6 +1,7 @@
 package com.fiipradctic.Lybrarium.services;
 
 import com.fiipradctic.Lybrarium.Exceptions.ApiRequestException;
+import com.fiipradctic.Lybrarium.Models.Book;
 import com.fiipradctic.Lybrarium.Models.Client;
 import com.fiipradctic.Lybrarium.repositories.ClientRepository;
 import com.fiipradctic.Lybrarium.repositories.RentalRepository;
@@ -56,8 +57,8 @@ public class ClientService {
             filteredClients = filteredClients.stream().filter(x -> x.getName().toLowerCase(Locale.ROOT).contains(name.get().toLowerCase(Locale.ROOT))).collect(Collectors.toList());
         if(sort.isPresent())
             if(sort.get().equals("name")) {
-                Comparator<Client> nameSorter
-                        = (b1, b2) -> b1.getName().compareTo(b2.getName());
+                Comparator<Client> nameSorter =
+                    Comparator.comparing(Client::getName, Comparator.nullsLast(Comparator.naturalOrder()));
                 filteredClients = filteredClients.stream().sorted(nameSorter).collect(Collectors.toList());
             }
         return filteredClients;

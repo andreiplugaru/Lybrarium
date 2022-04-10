@@ -67,7 +67,6 @@ public class BookService {
                 Comparator<Book> nameSorter =
                     Comparator.comparing(Book::getName, Comparator.nullsLast(Comparator.naturalOrder()));
                 filteredBooks = filteredBooks.stream().sorted(nameSorter).collect(Collectors.toList());
-
             }
             else if(sort.get().equals("author")) {
                 Comparator<Book> authorSorter =
