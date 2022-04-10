@@ -1,7 +1,6 @@
 package com.fiipradctic.Lybrarium.services;
 
 import com.fiipradctic.Lybrarium.Exceptions.ApiRequestException;
-import com.fiipradctic.Lybrarium.Models.Book;
 import com.fiipradctic.Lybrarium.Models.Rental;
 import com.fiipradctic.Lybrarium.repositories.BookRepository;
 import com.fiipradctic.Lybrarium.repositories.ClientRepository;

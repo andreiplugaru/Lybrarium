@@ -6,10 +6,6 @@ import com.fiipradctic.Lybrarium.repositories.ClientRepository;
 import com.fiipradctic.Lybrarium.repositories.RentalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.time.LocalDateTime;
-import java.time.Period;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;

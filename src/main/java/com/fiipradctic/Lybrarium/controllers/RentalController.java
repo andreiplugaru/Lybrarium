@@ -1,8 +1,6 @@
 package com.fiipradctic.Lybrarium.controllers;
 
-import com.fiipradctic.Lybrarium.Models.Book;
 import com.fiipradctic.Lybrarium.Models.Rental;
-import com.fiipradctic.Lybrarium.services.ClientService;
 import com.fiipradctic.Lybrarium.services.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

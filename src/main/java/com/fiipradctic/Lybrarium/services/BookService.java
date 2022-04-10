@@ -2,11 +2,9 @@ package com.fiipradctic.Lybrarium.services;
 
 import com.fiipradctic.Lybrarium.Exceptions.ApiRequestException;
 import com.fiipradctic.Lybrarium.Models.Book;
-import com.fiipradctic.Lybrarium.Models.ComicBook;
 import com.fiipradctic.Lybrarium.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Comparator;
 import java.util.List;

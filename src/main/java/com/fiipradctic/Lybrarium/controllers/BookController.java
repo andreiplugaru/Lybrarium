@@ -1,15 +1,12 @@
 package com.fiipradctic.Lybrarium.controllers;
 
-import com.fiipradctic.Lybrarium.Exceptions.ApiRequestException;
 import com.fiipradctic.Lybrarium.Models.Book;
 import com.fiipradctic.Lybrarium.repositories.BookRepository;
 import com.fiipradctic.Lybrarium.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
-import java.util.stream.Collectors;
 
 @RestController
 public class BookController {

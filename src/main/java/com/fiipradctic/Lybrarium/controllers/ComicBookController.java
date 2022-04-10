@@ -1,6 +1,5 @@
 package com.fiipradctic.Lybrarium.controllers;
 
-import com.fiipradctic.Lybrarium.Models.Client;
 import com.fiipradctic.Lybrarium.Models.ComicBook;
 import com.fiipradctic.Lybrarium.repositories.ComicBookRepository;
 import com.fiipradctic.Lybrarium.services.ComicBookService;
@@ -8,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 public class ComicBookController {

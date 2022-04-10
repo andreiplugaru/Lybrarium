@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="Client", schema = "Client")
+@Table(name="Client")
 public class Client{
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)

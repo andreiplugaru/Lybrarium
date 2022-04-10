@@ -1,18 +1,13 @@
 package com.fiipradctic.Lybrarium.controllers;
 
-import com.fiipradctic.Lybrarium.Models.Book;
 import com.fiipradctic.Lybrarium.Models.Client;
-import com.fiipradctic.Lybrarium.repositories.ClientRepository;
 import com.fiipradctic.Lybrarium.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 public class ClientController {
@@ -44,8 +39,7 @@ public class ClientController {
         return r;
     }
    @GetMapping("/getBadClients")
-    public List<Client> getClients(){
-
+    public List<Client> getBadClients(){
         return clientService.getBadClients();
     }
 }
